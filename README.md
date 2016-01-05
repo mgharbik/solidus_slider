@@ -1,13 +1,13 @@
-# SpreeSlider
+# SolidusSlider
 
-Add a slider to the homepage of your Spree site, and manage the slideshow from within the Admin panel.
+Add a slider to the homepage of your Solidus site, and manage the slideshow from within the Admin panel.
 
 ## Installation
 
-To install, add spree_slider to your @Gemfile@ and run `bundle install`:
+To install, add solidus_slider to your @Gemfile@ and run `bundle install`:
 
 ```
-gem 'spree_slider', github: 'spree-contrib/spree_slider'
+gem 'solidus_slider', github: 'simo163/solidus_slider'
 ```
 
 Then install and run the migrations to add the tables:
@@ -18,7 +18,7 @@ bundle exec rake db:migrate
 
 ### Using the slider
 
-Spree 3 uses the bootstrap framework and a default slider template is available for bootstrap 3
+Solidus uses the bootstrap framework and a default slider template is available for bootstrap 3
 `spree/shared/_slider.html.erb`.
 
 Example usage:
