@@ -9,12 +9,12 @@ group :test do
   gem 'guard-rspec'
   gem 'sqlite3'
 
-  if RUBY_PLATFORM.downcase.include? "darwin"
+  if RUBY_PLATFORM.downcase.include? 'darwin'
     gem 'rb-fsevent'
     gem 'growl'
   end
 end
 
-gem 'solidus'
+gem 'solidus', git: 'git@github.com:solidusio/solidus.git', branch: 'master'
 
 gemspec
