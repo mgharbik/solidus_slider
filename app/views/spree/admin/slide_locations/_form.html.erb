@@ -1,10 +1,7 @@
-<div class="row">
-
-  <div class="col-md-12">
-    <%= f.field_container :name do %>
-      <%= f.label :name, t(:name) %><br>
-      <%= f.text_field :name, class: "form-control fullwidth" %>
-    <% end %>
-  </div>
-
+<div data-hook="admin_location_form_fields" class="field align-center">
+  <%= f.field_container :name do %>
+    <%= f.label :name, Spree.t(:name), class: 'required' %><br />
+    <%= error_message_on :slide_location, :name, :class => 'fullwidth title' %>
+    <%= text_field :slide_location, :name %>
+  <% end %>
 </div>

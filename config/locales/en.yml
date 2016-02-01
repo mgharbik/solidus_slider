@@ -16,8 +16,9 @@ en:
     models:
       spree/slide: "Slide"
 
-  spree_slider:
-    config_name: "Spree Slider"
+  spree:
+    # sliders
+    sliders: "Sliders"
     config_description: "Manage Spree Slider contents"
     title: "Slides"
     new_slide: "New Slide"
@@ -27,10 +28,8 @@ en:
     placeholder_link_url: "Leave blank to use product url"
     image_tip: "Default first product image"
 
-  spree_slider_locations:
-    config_name: "Spree Slider Locations"
-    config_description: "Manage Spree Slider Locations"
-    title: "Slider Locations"
-    new_location: "New Location"
-    editing_location: "Editing Location"
-    back_to_locations: "Back to Locations"
+    # slider_locations
+    slider_locations: "Slider Locations"
+    new_slider_location: "New Slider Location"
+    editing_slider_location: "Editing Slider Location"
+    back_to_slider_locations: "Back to Slider Locations"
