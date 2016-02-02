@@ -1,69 +1,65 @@
-<div class="row">
-  <div class="col-md-2">
-    <%= f.field_container :position do %>
-      <%= f.label :position, t(:position) %>
-      <%= f.number_field :position, :class => 'fullwidth form-control' %>
-    <% end %>
-  </div>
+<div data-hook="admin_slide_form_fields">
 
-  <div class="col-md-10">
-    <div class="field checkbox">
-      <label>
-        <%= f.check_box :published, class: "form-control" %>
-        <%= t(:published) %>
-      </label>
+  <%= f.field_container Spree.t(:name) do %>
+    <%= f.label :name, Spree.t(:name) %>
+    <%= f.text_field :name, :placeholder => Spree.t(:slide_placeholder_name),:class => 'fullwidth title' %>
+    <%= f.error_message_on :name %>
+  <% end %>
+
+  <%= f.field_container :link_url do %>
+    <%= f.label :link_url, Spree.t(:link_url) %><br>
+    <%= f.text_field :link_url, :placeholder => Spree.t(:slide_placeholder_link_url), :class => 'fullwidth'%>
+    <%= f.error_message_on :link_url %>
+  <% end %>
+
+  <%= f.field_container :product_id do %>
+    <%= label_tag :product_id, Spree.t(:product) %><br>
+    <%= hidden_field_tag 'slide[product_id]', f.object.product_id.to_s, :class => "product_picker fullwidth" %>
+  <% end %>
+
+  <div class="row">
+    <div class="alpha six columns">
+      <%= f.field_container :position do %>
+        <%= f.label :position, Spree.t(:position) %>
+        <%= f.number_field :position, :class => 'fullwidth' %>
+        <%= f.error_message_on :position %>
+      <% end %>
+    </div>
+    <div class="omega six columns">
+      <%= f.field_container :published do %>
+        <%= f.label :published, Spree.t(:published) %>
+        <%= f.check_box :published, :class => 'fullwidth' %>
+        <%= f.error_message_on :published %>
+      <% end %>
     </div>
   </div>
 
-  <div class="col-md-12">
-    <%= f.field_container :product_id do %>
-      <%= label_tag :product_id, t(:product) %><br>
-      <%= hidden_field_tag 'slide[product_id]', f.object.product_id.to_s, :class => "product_picker fullwidth" %>
-    <% end %>
-  </div>
+  <%= f.field_container :slide_location_ids do %>
+    <%= f.label :slide_location_ids, Spree.t(:slide_locations) %>
+    <%= f.select :slide_location_ids, Spree::SlideLocation.all.map { |t| [t.name, t.id] }, {}, { multiple: true, class: "select2 fullwidth", disabled: (cannot? :edit, Spree::SlideLocation) } %>
+    <%= f.error_message_on :slide_location_ids %>
+  <% end %>
 
-  <div class="col-md-6">
-    <%= f.field_container :name do %>
-      <%= f.label :name, t(:name) %><br>
-      <%= f.text_field :name, :class => 'fullwidth form-control', :placeholder => t('spree_slider.placeholder_name') %>
-    <% end %>
-  </div>
+  <%= f.field_container :body do %>
+    <%= f.label :body, Spree.t(:body) %><br>
+    <%= f.text_area :body, { :cols => 60, :rows => 4, :class => 'fullwidth' } %>
+    <%= f.error_message_on :body %>
+  <% end %>
 
-  <div class="col-md-6">
-    <%= f.field_container :link_url do %>
-      <%= f.label :link_url, t(:link_url) %><br>
-      <%= f.text_field :link_url, :class => 'fullwidth form-control', :placeholder => t('spree_slider.placeholder_link_url') %>
-    <% end %>
-  </div>
+  <%= f.field_container :image do %>
+    <%= f.label :image, Spree.t(:image), class: 'required' %> <i>(<%= Spree.t(:slide_image_tip) %>)</i><br>
+    <%= f.file_field :image %>
+    <%= f.error_message_on :image %>
+  <% end %>
 
-  <div class="col-md-6">
-    <%= render 'spree/admin/slides/edit_slider_locations', f: f %>
-  </div>
-
-  <div class="col-md-12">
-    <%= f.field_container :body do %>
-      <%= f.label :body, t(:body) %><br>
-      <%= f.text_area :body, {:cols => 60, :rows => 4, :class => 'fullwidth form-control'} %>
+  <%= f.field_container :image do %>
+    <% if f.object.image? %>
+      <p>
+        <%= label_tag Spree.t(:preview) %>
+        <br>
+        <%= image_tag f.object.image, class: 'fullwidth img-responsive' %>
+      </p>
     <% end %>
-  </div>
-
-  <div class="col-md-6">
-    <%= f.field_container :image do %>
-      <%= f.label :image, t(:image) %> <i>(<%= t('spree_slider.image_tip') %>)</i><br>
-      <%= f.file_field :image %>
-    <% end %>
-  </div>
-
-  <div class="col-md-6">
-    <%= f.field_container :image do %>
-      <% if f.object.image? %>
-        <p>
-          <%= label_tag t(:preview) %>
-          <br>
-          <%= image_tag f.object.image, class: 'img-responsive' %>
-        </p>
-      <% end %>
-    <% end %>
-  </div>
+  <% end %>
 
 </div>
