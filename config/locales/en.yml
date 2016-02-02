@@ -23,10 +23,10 @@ en:
     slide_image_tip: "Default first product image"
 
     # slider_locations
-    slider_locations: "Slider Locations"
-    new_slider_location: "New Slider Location"
-    editing_slider_location: "Editing Slider Location"
-    back_to_slider_locations: "Back to Slider Locations"
+    slide_locations: "Slide Locations"
+    new_slide_location: "New Slide Location"
+    editing_slide_location: "Editing Slide Location"
+    back_to_slide_locations: "Back to Slide Locations"
 
   activerecord:
     models:

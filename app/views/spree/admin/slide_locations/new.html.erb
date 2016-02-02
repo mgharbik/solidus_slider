@@ -1,9 +1,9 @@
 <% content_for :page_title do %>
-  <%= Spree.t(:new_slider_location) %>
+  <%= Spree.t(:new_slide_location) %>
 <% end %>
 
 <% content_for :page_actions do %>
-  <li><%= link_to_with_icon 'arrow-left', Spree.t(:back_to_slider_locations), admin_slide_locations_path, :class => 'button' %></li>
+  <li><%= link_to_with_icon 'arrow-left', Spree.t(:back_to_slide_locations), admin_slide_locations_path, :class => 'button' %></li>
 <% end %>
 
 <%= render :partial => 'spree/shared/error_messages', :locals => { :target => @slide_location } %>

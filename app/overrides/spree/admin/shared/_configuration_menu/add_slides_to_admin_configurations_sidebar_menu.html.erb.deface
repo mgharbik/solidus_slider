@@ -1,2 +1,4 @@
 <!-- insert_bottom "[data-hook='admin_configurations_sidebar_menu']" -->
-<%= configurations_sidebar_menu_item Spree.t(:sliders), admin_slides_path %>
+<% if can? :display, Spree::Slide %>
+  <%= configurations_sidebar_menu_item Spree.t(:slides), admin_slides_path %>
+<% end %>
