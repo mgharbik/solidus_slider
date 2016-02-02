@@ -1,26 +1,31 @@
 de:
-  next: "Nächste"
-  previous: "Vorhergehend"
-  name: "Name"
-  body: "Körper"
-  link_url: "Link URL"
-  image: "Bild"
-  image_file_name: "Name der Bilddatei"
-  published: "Veröffentlicht"
-  position: "Position"
-  y: "Ja"
-  n: "Nein"
+  spree:
+    next: "Nächste"
+    previous: "Vorhergehend"
+    name: "Name"
+    link_url: "Link URL"
+    position: "Position"
+    published: "Veröffentlicht"
+    body: "Körper"
+    image: "Bild"
+    preview: "Preview"
+    image_file_name: "Name der Bilddatei"
+
+    slides: "Slides"
+    slide: "Slide"
+    new_slide: "Neue Slide"
+    editing_slide: "Bearbeiten Slide"
+    back_to_slides: "Back to Slides"
+    slide_placeholder_name: "Leer lassen, um Produkt-Namen verwenden"
+    slide_placeholder_link_url: "Leer lassen, um Produkt-URL verwenden"
+    slide_image_tip: "Standard ersten product image"
+
+    slide_locations: "Slide Locations"
+    new_slide_location: "Neue Slide Location"
+    editing_slide_location: "Bearbeiten Slide Location"
+    back_to_slide_locations: "Back to Slide Locations"
 
   activerecord:
     models:
       spree/slide: "Slide"
-
-  spree_slider:
-    config_name: "Spree Slides"
-    config_description: "Verwalten Spree Slider Inhalt"
-    title: "Slides"
-    new_slide: "Neue Slide"
-    editing_slide: "Bearbeiten Slide"
-    placeholder_name: "Leer lassen, um Produkt-Namen verwenden"
-    placeholder_link_url: "Leer lassen, um Produkt-URL verwenden"
-    image_tip: "Standard ersten product image"
+      spree/slide_location: "Slide Location"

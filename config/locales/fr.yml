@@ -1,0 +1,31 @@
+en:
+  spree:
+    next: "Suivant"
+    previous: "Précédent"
+    name: "Name"
+    link_url: "Lien URL"
+    position: "Position"
+    published: "Publié"
+    body: "Corp"
+    image: "Image"
+    preview: "Aperçu"
+    image_file_name: "Nom fichier d'image"
+
+    slides: "Diapositives"
+    slide: "Diapositive"
+    new_slide: "Nouvelle Diapositive"
+    editing_slide: "Modification Diapositive"
+    back_to_slides: "Retour aux Diapositives"
+    slide_placeholder_name: "Laissez vide pour utiliser le nom de produit"
+    slide_placeholder_link_url: "Laissez vide pour utiliser l'url de produits"
+    slide_image_tip: "La première image de produit par défaut"
+
+    slide_locations: "Emplacements de Diapositive"
+    new_slide_location: "Nouvelle Emplacement de Diapositive"
+    editing_slide_location: "Modification Emplacement de Diapositive"
+    back_to_slide_locations: "Back aux Emplacements de Diapositive"
+
+  activerecord:
+    models:
+      spree/slide: "Diapositive"
+      spree/slide_location: "Emplacement de Diapositive"

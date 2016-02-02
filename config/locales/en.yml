@@ -4,7 +4,6 @@ en:
     previous: "Previous"
     name: "Name"
     link_url: "Link URL"
-    product: "Product"
     position: "Position"
     published: "Published"
     body: "Body"
@@ -12,7 +11,6 @@ en:
     preview: "Preview"
     image_file_name: "Image file name"
 
-    # slides
     slides: "Slides"
     slide: "Slide"
     new_slide: "New Slide"
@@ -22,7 +20,6 @@ en:
     slide_placeholder_link_url: "Leave blank to use product url"
     slide_image_tip: "Default first product image"
 
-    # slider_locations
     slide_locations: "Slide Locations"
     new_slide_location: "New Slide Location"
     editing_slide_location: "Editing Slide Location"

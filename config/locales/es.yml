@@ -1,26 +1,31 @@
 es:
-  next: "Siguiente"
-  previous: "Anterior"
-  name: "Nombre"
-  body: "Cuerpo"
-  link_url: "URL de enlace"
-  image: "Imagen"
-  image_file_name: "Nombre de la imagen"
-  published: "Publicado"
-  position: "Posición"
-  y: "Sí"
-  n: "No"
+  spree:
+    next: "Siguiente"
+    previous: "Anterior"
+    name: "Nombre"
+    link_url: "URL de enlace"
+    position: "Posición"
+    published: "Publicado"
+    body: "Cuerpo"
+    image: "Imagen"
+    preview: "Preview"
+    image_file_name: "Nombre de la imagen"
+
+    slides: "Diapositivas"
+    slide: "Diapositiva"
+    new_slide: "Nueva Diapositiva"
+    editing_slide: "Editando Diapositiva"
+    back_to_slides: "Volver a Diapositivas"
+    slide_placeholder_name: "En blanco para usar el del producto"
+    slide_placeholder_link_url: "En blanco para usar la del producto"
+    slide_image_tip: "Si no selecciona ninguna imagen, se tomará la primera del producto"
+
+    slide_locations: "Localizaciónes de Diapositiva"
+    new_slide_location: "Nueva Localización de Diapositiva"
+    editing_slide_location: "Editando Localización de Diapositiva"
+    back_to_slide_locations: "Volver a Localizaciónes de Diapositiva"
 
   activerecord:
     models:
       spree/slide: "Diapositiva"
-
-  spree_slider:
-    config_name: "Diapositivas Spree"
-    config_description: "Configura las diapositivas de portada"
-    title: "Diapositivas"
-    new_slide: "Nueva Diapositiva"
-    editing_slide: "Editando Diapositiva"
-    placeholder_name: "En blanco para usar el del producto"
-    placeholder_link_url: "En blanco para usar la del producto"
-    image_tip: "Si no selecciona ninguna imagen, se tomará la primera del producto"
+      spree/slide_location: "Localización de Diapositiva"
