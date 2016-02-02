@@ -36,7 +36,7 @@
 
   <%= f.field_container :slide_location_ids do %>
     <%= f.label :slide_location_ids, Spree.t(:slide_locations) %>
-    <%= f.select :slide_location_ids, Spree::SlideLocation.all.map { |t| [t.name, t.id] }, {}, { multiple: true, class: "select2 fullwidth", disabled: (cannot? :edit, Spree::SlideLocation) } %>
+    <%= f.select :slide_location_ids, @slide_locations.map { |t| [t.name, t.id] }, {}, { multiple: true, class: "select2 fullwidth", disabled: (cannot? :edit, Spree::SlideLocation) } %>
     <%= f.error_message_on :slide_location_ids %>
   <% end %>
 

@@ -1,6 +1,7 @@
 module Spree
   module Admin
     class SlidesController < ResourceController
+      before_action :load_data, except: [:index, :destroy]
       respond_to :html
 
       def index
@@ -18,6 +19,10 @@ module Spree
 
         def slide_params
           params.require(:slide).permit(:name, :body, :link_url, :published, :image, :position, :product_id)
+        end
+
+        def load_data
+          @slide_locations = Spree::SlideLocation.all
         end
     end
   end
