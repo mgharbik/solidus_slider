@@ -3,6 +3,8 @@ en:
     next: "Next"
     previous: "Previous"
     name: "Name"
+    width: "Width"
+    height: "Height"
     link_url: "Link URL"
     position: "Position"
     published: "Published"

@@ -1,28 +1,23 @@
 module Spree
   module Admin
     class SlidesController < ResourceController
-      before_action :load_data, except: [:index, :destroy]
-      respond_to :html
+      before_action :set_slide_location
 
       def index
-        @slides = Spree::Slide.order(:position)
+        @slides = @slide_location.slides.order(:position)
       end
 
       private
         def location_after_save
           if @slide.created_at == @slide.updated_at
-            edit_admin_slide_url(@slide)
+            edit_admin_slide_location_slide_path(@slide_location, @slide)
           else
-            admin_slides_url
+            admin_slide_location_slides_path(@slide_location)
           end
         end
 
-        def slide_params
-          params.require(:slide).permit(:name, :body, :link_url, :published, :image, :position, :product_id)
-        end
-
-        def load_data
-          @slide_locations = Spree::SlideLocation.all
+        def set_slide_location
+          @slide_location = Spree::SlideLocation.find(params[:slide_location_id])
         end
     end
   end

@@ -2,7 +2,7 @@
 
 <% content_for :page_actions do %>
   <li id="admin_new_slide_link">
-    <%= button_link_to Spree.t(:new_slide), new_object_url, { :icon => 'plus', :id => 'admin_new_slide' } %>
+    <%= button_link_to Spree.t(:new_slide), new_admin_slide_location_slide_url(@slide_location), { :icon => 'plus', :id => 'admin_new_slide' } %>
   </li>
 <% end if can?(:create, Spree::Slide) %>
 
@@ -11,7 +11,7 @@
 <% end %>
 
 <% if @slides.any? %>
-  <table class="index sortable" id="listing_slides" data-hook data-sortable-link="<%= update_positions_admin_slides_url %>" >
+  <table class="index sortable" id="listing_slides" data-hook data-sortable-link="<%= update_positions_admin_slide_location_slides_url(@slide_location) %>" >
     <thead>
       <colgroup>
         <col style="width: 30%" />
@@ -34,16 +34,16 @@
           <td class="no-border">
             <span class="handle"></span>
           </td>
-          <td class="align-center"><%= image_tag slide.slide_image, style: 'width: 120px; height: auto;' %></td>
-          <td class="align-center"><%= link_to slide.name, object_url(slide) %></td>
+          <td class="align-center"><%= image_tag slide.slide_photo, style: 'width: 120px; height: auto;' %></td>
+          <td class="align-center"><%= slide.name %></td>
           <td class="align-center"><%= link_to slide.product.name, object_url(slide) unless slide.product_id.blank? %></td>
           <td class="align-center"><%= slide.published ? Spree.t(:say_yes) : Spree.t(:say_no) %></td>
           <td class="actions">
             <% if can?(:update, slide) %>
-              <%= link_to_edit(slide, :class => 'admin_edit_slide', :no_text => true) %>
+              <%= link_to_edit(slide, url: edit_admin_slide_location_slide_url(@slide_location, slide), :class => 'admin_edit_slide', :no_text => true) %>
             <% end %>
             <% if can?(:destroy, slide) %>
-              <%= link_to_delete(slide, :no_text => true) %>
+              <%= link_to_delete(slide, url: admin_slide_location_slide_url(@slide_location, slide), :no_text => true) %>
             <% end %>
           </td>
         </tr>
@@ -54,7 +54,7 @@
   <div class="alpha twelve columns no-objects-found">
     <%= Spree.t(:no_resource_found, resource: I18n.t(:other, scope: 'activerecord.models.spree/slide')) %>
     <% if can?(:create, Spree::Slide) %>
-      <%= link_to Spree.t(:add_one), spree.new_admin_slide_path %>!
+      <%= link_to Spree.t(:add_one), spree.new_admin_slide_location_slide_path(@slide_location) %>!
     <% end %>
   </div>
 <% end %>

@@ -1,7 +1,27 @@
 <div data-hook="admin_slide_location_form_fields" class="field align-center">
-  <%= f.field_container :name do %>
-    <%= f.label :name, Spree.t(:name), class: 'required' %><br />
-    <%= error_message_on :slide_location, :name, :class => 'fullwidth title' %>
-    <%= text_field :slide_location, :name %>
-  <% end %>
+  <div class='row'>
+    <div class="alpha six columns">
+      <%= f.field_container :name do %>
+        <%= f.label :name, Spree.t(:name), class: 'required' %><br />
+        <%= f.text_field :name, :class => 'fullwidth title' %>
+        <%= f.error_message_on :name %>
+      <% end %>
+    </div>
+
+    <div class="five columns">
+      <%= f.field_container :width do %>
+        <%= f.label :width, Spree.t(:width), class: 'required' %><br />
+        <%= f.number_field :width, :class => 'fullwidth title' %>
+        <%= f.error_message_on :width %>
+      <% end %>
+    </div>
+
+    <div class="omega five columns">
+      <%= f.field_container :height do %>
+        <%= f.label :height, Spree.t(:height), class: 'required' %><br />
+        <%= f.number_field :height, :class => 'fullwidth title' %>
+        <%= f.error_message_on :height %>
+      <% end %>
+    </div>
+  </div>
 </div>

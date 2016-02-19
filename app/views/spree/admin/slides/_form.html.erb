@@ -1,5 +1,7 @@
 <div data-hook="admin_slide_form_fields">
 
+  <%= f.hidden_field :slide_location_id, value: @slide_location.id %>
+
   <%= f.field_container Spree.t(:name) do %>
     <%= f.label :name, Spree.t(:name) %>
     <%= f.text_field :name, :placeholder => Spree.t(:slide_placeholder_name),:class => 'fullwidth title' %>
@@ -34,32 +36,24 @@
     </div>
   </div>
 
-  <%= f.field_container :slide_location_ids do %>
-    <%= f.label :slide_location_ids, Spree.t(:slide_locations) %>
-    <%= f.select :slide_location_ids, @slide_locations.map { |t| [t.name, t.id] }, {}, { multiple: true, class: "select2 fullwidth", disabled: (cannot? :edit, Spree::SlideLocation) } %>
-    <%= f.error_message_on :slide_location_ids %>
-  <% end %>
-
   <%= f.field_container :body do %>
     <%= f.label :body, Spree.t(:body) %><br>
     <%= f.text_area :body, { :cols => 60, :rows => 4, :class => 'fullwidth' } %>
     <%= f.error_message_on :body %>
   <% end %>
 
-  <%= f.field_container :image do %>
-    <%= f.label :image, Spree.t(:image), class: 'required' %> <i>(<%= Spree.t(:slide_image_tip) %>)</i><br>
-    <%= f.file_field :image %>
-    <%= f.error_message_on :image %>
+  <%= f.field_container :body do %>
+    <%= f.label :attachment, Spree.t(:image), class: 'required' %> <i>(<%= Spree.t(:slide_image_tip) %>)</i><br>
+    <%= f.file_field :attachment %>
+    <%= f.error_message_on :attachment %>
   <% end %>
 
-  <%= f.field_container :image do %>
-    <% if f.object.image? %>
-      <p>
-        <%= label_tag Spree.t(:preview) %>
-        <br>
-        <%= image_tag f.object.image, class: 'fullwidth img-responsive' %>
-      </p>
-    <% end %>
+  <% if f.object.attachment.present? %>
+    <p>
+      <%= label_tag Spree.t(:preview) %>
+      <br />
+      <%= image_tag f.object.attachment, class: 'fullwidth img-responsive' %>
+    </p>
   <% end %>
 
 </div>

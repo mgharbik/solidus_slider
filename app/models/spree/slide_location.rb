@@ -1,9 +1,17 @@
-class Spree::SlideLocation < ActiveRecord::Base
+module Spree
+  class SlideLocation < ActiveRecord::Base
+    has_many :slides
+    validates :name, :presence => true
+    validates :width, :presence => true
+    validates :height, :presence => true
 
-  has_and_belongs_to_many :slides, 
-                          class_name: 'Spree::Slide', 
-                          join_table: 'spree_slide_slide_locations'
-
-  validates :name, :presence => true
-
+    def initialize(attrs = nil)
+      attrs ||= {
+        :name => 'home',
+        :width => 800,
+        :height => 500
+      }
+      super
+    end
+  end
 end
